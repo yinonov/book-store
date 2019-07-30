@@ -24,11 +24,17 @@
     "strictInjectionParameters": true
   },
   "paths": {
+    "@app/*": [
+      "src/app/*"
+    ],
     "@core/*": [
       "src/app/core/*"
     ],
-    "@search/*": [
-      "src/app/search/*"
+    "@shared/*": [
+      "src/app/shared/*"
+    ],
+    "@books/*": [
+      "src/app/books/*"
     ]
   }
 }

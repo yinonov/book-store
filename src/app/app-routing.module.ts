@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ExampleComponent } from './example.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/search',
+    redirectTo: '/books',
     pathMatch: 'full'
   },
-  { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) },
+  { path: 'example', component: ExampleComponent },
+  { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
   // {
   //   path: '**',
   //   component: ErrorPageComponent,

@@ -1,0 +1,53 @@
+import { AppState } from '@app/shared/util-models';
+import { Injectable } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Effect } from '@ngrx/effects';
+import { DataPersistence } from '@nrwl/nx';
+import { map } from 'rxjs/operators';
+import { SharedMoviesDataAccessService } from '../shared-movies-data-access.service';
+import {
+    MoviesApiAllLoaded,
+    MoviesApiAllLoadedError,
+    MoviesApiOneLoaded,
+    MoviesApiOneLoadedError,
+    MoviesDetailRouteRequestedOneMovie,
+    MoviesRouteRequestedAllMovies,
+} from './movies.actions';
+
+@Injectable()
+export class MoviesEffects {
+    @Effect() loadAllMoviesEffect$ = this.dataPersistence.fetch(
+        MoviesRouteRequestedAllMovies,
+        {
+            run: (action: MoviesRouteRequestedAllMovies, state: AppState) =>
+                this.moviesService
+                    .getAllMovies()
+                    .pipe(map(s => new MoviesApiAllLoaded(s))),
+
+            onError: (
+                action: MoviesRouteRequestedAllMovies,
+                error: HttpErrorResponse,
+            ) => new MoviesApiAllLoadedError(error),
+        },
+    );
+
+    @Effect() loadOneMovieEffect$ = this.dataPersistence.fetch(
+        MoviesDetailRouteRequestedOneMovie,
+        {
+            run: (action: MoviesDetailRouteRequestedOneMovie, state: AppState) =>
+                this.moviesService
+                    .getMovie(action.id)
+                    .pipe(map(s => new MoviesApiOneLoaded(s))),
+
+            onError: (
+                action: MoviesDetailRouteRequestedOneMovie,
+                error: HttpErrorResponse,
+            ) => new MoviesApiOneLoadedError(error),
+        },
+    );
+
+    constructor(
+        private dataPersistence: DataPersistence<AppState>,
+        private moviesService: SharedMoviesDataAccessService,
+    ) { }
+}
