@@ -24,6 +24,9 @@
     "strictInjectionParameters": true
   },
   "paths": {
+    "@core/*": [
+      "src/app/core/*"
+    ],
     "@search/*": [
       "src/app/search/*"
     ]
