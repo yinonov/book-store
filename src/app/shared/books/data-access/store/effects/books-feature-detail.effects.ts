@@ -5,16 +5,16 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { Effect } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/nx';
-import { BooksFeatureDetailComponent } from '@books/books-feature-detail.component';
+import { BooksFeatureDetailComponent } from '@books/components/books-feature-detail/books-feature-detail.component';
 
 @Injectable()
 export class BooksFeatureDetailEffects {
     @Effect() booksDetailNavigationEffect$ = this.dataPersistence.navigation(
         BooksFeatureDetailComponent,
         {
-            run(a: ActivatedRouteSnapshot, s: AppState) {
-                if (booksDetector('notLoaded')(s.books.entities, a.params.id)) {
-                    return fromBooksActions.booksDetailRouteRequestedOneBook(a.params.id);
+            run({ params: { bookId: id } }: ActivatedRouteSnapshot, s: AppState) {
+                if (booksDetector('notLoaded')(s.books.entities, id)) {
+                    return fromBooksActions.booksDetailRouteRequestedOneBook({ id });
                 }
             },
         },

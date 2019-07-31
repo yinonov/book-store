@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  templateUrl: './books-feature-shell.component.html',
-  styleUrls: ['./books-feature-shell.component.scss']
+  template: `
+    <app-books-list></app-books-list>
+    <router-outlet></router-outlet>
+  `
 })
 export class BooksFeatureShellComponent implements OnInit {
 
