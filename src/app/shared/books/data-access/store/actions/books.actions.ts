@@ -1,7 +1,8 @@
 import { createAction, props } from '@ngrx/store';
 
-export const booksRouteRequestedOneBooks = createAction(
-  '[Books/API] Route Requested One Books',
+export const booksDetailRouteRequestedOneBook = createAction(
+  '[Books/API] Detail Route Requested One Books',
+  props<{ id: Book['id'] }>()
 );
 
 export const booksApiOneLoaded = createAction(

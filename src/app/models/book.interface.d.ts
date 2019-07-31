@@ -1,1 +1,4 @@
-interface Book { title: string; }
+interface Book {
+    readonly id: string;
+    title: string;
+}

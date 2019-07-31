@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { ExampleComponent } from './example.component';
+import { StateStoreModule } from './state-store.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ExampleComponent } from './example.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    StateStoreModule,
     CoreModule,
     UserModule,
   ],

@@ -1,3 +1,6 @@
 import { BooksState } from './books-state.interface';
+import { BOOKS_FEATURE_KEY } from '../books/data-access/store/reducers/books.reducer';
 
-export interface AppState extends BooksState { }
+export interface AppState {
+    [BOOKS_FEATURE_KEY]: BooksState;
+}

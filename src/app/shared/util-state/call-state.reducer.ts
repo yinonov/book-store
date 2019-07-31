@@ -2,7 +2,7 @@ import {
     CallState,
     CallStateUnion,
     LoadingState,
-} from '../../shared/util-models';
+} from '@shared/util-models';
 import {
     Action,
     ActionReducer,

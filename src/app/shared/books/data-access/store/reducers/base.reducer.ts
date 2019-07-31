@@ -1,7 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import * as booksActions from '../actions/books.actions';
-import { initialCallState } from '../../../../util-state';
+import { initialCallState } from '@shared/util-state';
 import { BooksState } from 'src/app/shared/util-models';
 
 export const booksAdapter: EntityAdapter<Book> = createEntityAdapter<Book>();

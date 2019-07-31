@@ -2,7 +2,7 @@ import * as fromBooksActions from '../actions/books.actions';
 
 export const booksCallStateTriggers = {
     single: {
-        loading: [fromBooksActions.booksRouteRequestedOneBooks.type],
+        loading: [fromBooksActions.booksDetailRouteRequestedOneBook.type],
         resting: [fromBooksActions.booksApiOneLoaded.type],
         erroring: [fromBooksActions.booksApiOneLoadError.type],
     },
