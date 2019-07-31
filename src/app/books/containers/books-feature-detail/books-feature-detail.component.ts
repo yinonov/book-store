@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BooksFacade } from '@app/shared/books/books.facade';
 
 @Component({
   templateUrl: './books-feature-detail.component.html',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksFeatureDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(public booksFacade: BooksFacade) { }
 
   ngOnInit() {
   }

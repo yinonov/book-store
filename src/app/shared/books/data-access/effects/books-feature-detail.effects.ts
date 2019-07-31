@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { Effect } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/nx';
-import { BooksFeatureDetailComponent } from '@books/components/books-feature-detail/books-feature-detail.component';
+import { BooksFeatureDetailComponent } from '@books/containers/books-feature-detail/books-feature-detail.component';
 
 @Injectable()
 export class BooksFeatureDetailEffects {

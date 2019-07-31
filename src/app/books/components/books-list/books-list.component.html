@@ -1,4 +1,6 @@
 <h2>MY BOOKS</h2>
 <div *ngFor="let book of books">
-  {{book.title}}
+  <a [routerLink]="book.id">
+    {{book.title}}
+  </a>
 </div>

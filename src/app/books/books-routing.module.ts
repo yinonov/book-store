@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { BooksFeatureShellComponent } from './books-feature-shell.component';
-import { BooksFeatureDetailComponent } from './components/books-feature-detail/books-feature-detail.component';
+import { BooksFeatureDetailComponent } from './containers/books-feature-detail/books-feature-detail.component';
 
 const routes: Routes = [
   {
