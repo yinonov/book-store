@@ -12,13 +12,13 @@ export class BooksEffects {
     @Effect() loadAllBooksEffect$ = this.dataPersistence.fetch(
         fromBooksActions.booksRouteRequestedAllBooks.type,
         {
-            run: (action: typeof fromBooksActions.booksRouteRequestedAllBooks, state: AppState) =>
+            run: (action: any, state: AppState) =>
                 this.booksService
                     .getAllBooks()
                     .pipe(map(books => fromBooksActions.booksApiAllLoaded({ books }))),
 
             onError: (
-                action: typeof fromBooksActions.booksRouteRequestedAllBooks,
+                action: any,
                 error: HttpErrorResponse,
             ) => fromBooksActions.booksApiAllLoadError(error),
         },
@@ -27,13 +27,13 @@ export class BooksEffects {
     @Effect() loadOneBookEffect$ = this.dataPersistence.fetch(
         fromBooksActions.booksDetailRouteRequestedOneBook.type,
         {
-            run: (action: typeof fromBooksActions.booksDetailRouteRequestedOneBook, state: AppState) =>
+            run: (action: any, state: AppState) =>
                 this.booksService
-                    .getBook(action)
+                    .getBook(action.id)
                     .pipe(map(book => fromBooksActions.booksApiOneLoaded({ book }))),
 
             onError: (
-                action: typeof fromBooksActions.booksDetailRouteRequestedOneBook,
+                action: any,
                 error: HttpErrorResponse,
             ) => fromBooksActions.booksApiOneLoadError(error),
         },
@@ -44,3 +44,8 @@ export class BooksEffects {
         private booksService: SharedBooksDataAccessService,
     ) { }
 }
+
+// ! In order to be able to type my actions,
+// ! so I can use their payload on the run/onError methods,
+// ! I need to do ReturnType
+// ! https://github.com/nrwl/nx/issues/1566

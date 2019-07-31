@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-books-list',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./books-list.component.scss']
 })
 export class BooksListComponent implements OnInit {
+  @Input() books: Book[];
 
   constructor() { }
 
