@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { UserModule } from './user/user.module';
 import { ExampleComponent } from './example.component';
-import { StateStoreModule } from './state-store.module';
+import { StateStoreModule } from './store/state-store.module';
+import { SharedUserDataAccessModule } from './shared/user/shared-user-data-access.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +17,8 @@ import { StateStoreModule } from './state-store.module';
     BrowserModule,
     AppRoutingModule,
     StateStoreModule,
+    SharedUserDataAccessModule,
     CoreModule,
-    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

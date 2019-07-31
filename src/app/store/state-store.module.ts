@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-import * as fromStore from './store/reducers';
+import * as fromStore from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 
 import { environment } from 'src/environments/environment';
@@ -12,6 +12,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
   declarations: [],
   imports: [
     StoreModule.forRoot(fromStore.reducers, {
+      metaReducers: fromStore.metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,
