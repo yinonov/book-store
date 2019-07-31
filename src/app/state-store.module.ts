@@ -8,8 +8,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
