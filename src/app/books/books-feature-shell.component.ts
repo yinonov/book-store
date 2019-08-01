@@ -3,7 +3,7 @@ import { BooksFacade } from '@app/shared/books/books.facade';
 import { WishListFacade } from '@app/shared/wish-list/wish-list.facade';
 import { SearchPortalService } from '@app/core/components/header/search-portal.service';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { SearchBooksComponent } from '@app/core/components/search-books/search-books.component';
+import { SearchBooksComponent } from './components/search-books/search-books.component';
 
 @Component({
   template: `

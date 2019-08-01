@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ClarityModule } from '@clr/angular';
 import { RouterModule } from '@angular/router';
 import { PortalModule } from '@angular/cdk/portal';
-import { SearchBooksComponent } from './components/search-books/search-books.component';
+import { SearchBooksComponent } from '@books/components/search-books/search-books.component';
 
 @NgModule({
   declarations: [HeaderComponent, NavigationComponent, SearchBooksComponent],

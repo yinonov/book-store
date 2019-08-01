@@ -28,7 +28,7 @@ export class SharedBooksDataAccessService {
   }
 
   getBook(id: Book['id']) {
-    return of(books.find(book => book.id = id));
+    return of(books.find(book => book.id === id));
   }
 
 }
