@@ -1,8 +1,3 @@
-<dialog open>
-  {{booksFacade.bookByRoute$|async|json}}
-</dialog>
-
-
 <div class="modal" *ngIf="booksFacade.bookByRoute$ | async as book">
   <div class="modal-dialog" role="dialog" aria-hidden="true">
     <div class="modal-content">

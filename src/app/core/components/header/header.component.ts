@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserFacade } from '@app/shared/user/user.facade';
+import { SearchPortalService } from './search-portal.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,10 @@ import { UserFacade } from '@app/shared/user/user.facade';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public userFacade: UserFacade) { }
+  constructor(
+    public userFacade: UserFacade,
+    public searchPortalService: SearchPortalService
+  ) { }
 
   ngOnInit() {
   }

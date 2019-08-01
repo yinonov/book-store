@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { BooksFacade } from '@app/shared/books/books.facade';
 import { WishListFacade } from '@app/shared/wish-list/wish-list.facade';
+import { SearchPortalService } from '@app/core/components/header/search-portal.service';
+import { ComponentPortal } from '@angular/cdk/portal';
+import { SearchBooksComponent } from '@app/core/components/search-books/search-books.component';
 
 @Component({
   template: `
@@ -12,12 +15,21 @@ import { WishListFacade } from '@app/shared/wish-list/wish-list.facade';
     <router-outlet></router-outlet>
   `
 })
-export class BooksFeatureShellComponent {
+export class BooksFeatureShellComponent implements AfterViewInit, OnDestroy {
 
   constructor(
     public booksFacade: BooksFacade,
-    public wishListFacade: WishListFacade
+    public wishListFacade: WishListFacade,
+    private searchPortalService: SearchPortalService
   ) { }
+
+  ngAfterViewInit() {
+    this.searchPortalService.componentPortal = new ComponentPortal(SearchBooksComponent);
+  }
+
+  ngOnDestroy() {
+    this.searchPortalService.componentPortal = undefined;
+  }
 
   onAdd(book: Book) {
     this.wishListFacade.add({

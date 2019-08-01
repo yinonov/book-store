@@ -2,12 +2,11 @@
     <div class="branding">
       Book Store
     </div>
+
     <app-navigation></app-navigation>
-    <form class="search">
-      <label for="search_input">
-        <input id="search_input" type="text" placeholder="Search for keywords...">
-      </label>
-    </form>
+
+    <ng-template [cdkPortalOutlet]="searchPortalService.componentPortal"></ng-template>
+
     <div class="header-actions">
       {{userFacade.getUserName$ | async}}
       <!-- <a href="javascript://" class="nav-link nav-icon">
