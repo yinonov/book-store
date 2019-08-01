@@ -15,7 +15,7 @@ export function userSync(r: ActionReducer<State>): ActionReducer<State> {
                 reducedState = { ...state, [USER_FEATURE_KEY]: JSON.parse(user) };
             }
         } else if (action.type === updateUser.type) {
-            window.localStorage.setItem('user', JSON.stringify((action as any).user));
+            window.localStorage.setItem(USER_FEATURE_KEY, JSON.stringify((action as any).user));
         }
         // console.log('state', state);
         // console.log('action', action);

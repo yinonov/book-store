@@ -1,17 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksFacade } from '@app/shared/books/books.facade';
+import { WishListFacade } from '@app/shared/wish-list/wish-list.facade';
 
 @Component({
   template: `
-    <app-books-list [books]="booksFacade.list$ | async"></app-books-list>
+    <app-books-list [books]="booksFacade.list$ | async" (add)="onAdd($event)"></app-books-list>
     <router-outlet></router-outlet>
   `
 })
-export class BooksFeatureShellComponent implements OnInit {
+export class BooksFeatureShellComponent {
 
-  constructor(public booksFacade: BooksFacade) { }
+  constructor(
+    public booksFacade: BooksFacade,
+    private wishListFacade: WishListFacade
+  ) { }
 
-  ngOnInit() {
+  onAdd(book: Book) {
+    this.wishListFacade.add({
+      ...book,
+      dateAdded: Date.now()
+    });
   }
 
 }

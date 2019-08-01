@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { ExampleComponent } from './example.component';
 import { StateStoreModule } from './store/state-store.module';
 import { SharedUserDataAccessModule } from './shared/user/shared-user-data-access.module';
+import { SharedWishListDataAccessModule } from './shared/wish-list/data-access/shared-wish-list-data-access.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedUserDataAccessModule } from './shared/user/shared-user-data-acces
     AppRoutingModule,
     StateStoreModule,
     SharedUserDataAccessModule,
+    SharedWishListDataAccessModule,
     CoreModule,
   ],
   providers: [],
