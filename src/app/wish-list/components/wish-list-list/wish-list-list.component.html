@@ -1,8 +1,20 @@
-<div *ngFor="let wish of list">
-  {{wish.title}}
-  <div>
-    added at:
-    {{wish.dateAdded}}
+<ng-container *ngTemplateOutlet="!!list.length ? listItems : empty"></ng-container>
+
+<ng-template #listItems>
+
+  <div *ngFor="let wish of list">
+    <h4>{{wish.title}}</h4>
+    <div class="p6">
+      added at:
+      {{wish.dateAdded | date}}
+    </div>
+    <button class="btn btn-warn" (click)="onRemove(wish)">
+      remove from list
+    </button>
   </div>
-  <button (click)="onRemove(wish)">remove from list</button>
-</div>
+
+</ng-template>
+
+<ng-template #empty>
+  Sorry, no items in wish list
+</ng-template>

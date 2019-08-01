@@ -1,7 +1,37 @@
 <h2>MY BOOKS</h2>
 <div *ngFor="let book of books">
-  <a [routerLink]="book.id">
-    {{book.title}}
-  </a>
-  <button *ngIf="!isWished(book)" (click)="onAdd(book)">Add to wishlist</button>
+
 </div>
+
+
+<clr-datagrid>
+
+  <clr-dg-column></clr-dg-column> -->
+  <clr-dg-column>Book Title</clr-dg-column>
+  <!-- <!-- <clr-dg-column>Creation date</clr-dg-column> -->
+
+  <clr-dg-row *ngFor="let book of books">
+
+    <clr-dg-cell>
+      <div role="tooltip" aria-haspopup="true" class="tooltip tooltip-right">
+        <button type="button" class="btn btn-icon" [ngClass]="{'btn-primary': isWished(book)}"
+          aria-label="add to wish list" (click)="onWishListClick(book)">
+          <clr-icon shape="heart" [ngClass]="{'is-solid': isWished(book)}"></clr-icon>
+        </button>
+        <span class="tooltip-content">
+          Add to wish list
+        </span>
+      </div>
+    </clr-dg-cell>
+
+    <clr-dg-cell>
+      <a [routerLink]="book.id">
+        {{book.title}}
+      </a>
+    </clr-dg-cell>
+    <!-- <clr-dg-cell>
+        <span class="color-square" [style.backgroundColor]="book.color"></span>
+  </clr-dg-cell> -->
+  </clr-dg-row>
+
+</clr-datagrid>

@@ -10,13 +10,16 @@ export class BooksListComponent {
   @Input() books: Book[];
   @Input() wishListDictionary: Dictionary<Wish>;
   @Output() add: EventEmitter<Book> = new EventEmitter();
+  @Output() remove: EventEmitter<Book> = new EventEmitter();
 
   isWished({ id }: Book) {
     return this.wishListDictionary[id];
   }
 
-  onAdd(book: Book) {
-    this.add.emit(book);
+  onWishListClick(book: Book) {
+    this.isWished(book)
+      ? this.remove.emit(book)
+      : this.add.emit(book);
   }
 
 }

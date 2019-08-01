@@ -1,4 +1,27 @@
 <dialog open>
-  <p>books-feature-detail works!</p>
   {{booksFacade.bookByRoute$|async|json}}
 </dialog>
+
+
+<div class="modal" *ngIf="booksFacade.bookByRoute$ | async as book">
+  <div class="modal-dialog" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" class="close" type="button" routerLink="../">
+          <clr-icon aria-hidden="true" shape="close"></clr-icon>
+        </button>
+        <h3 class="modal-title">{{book.title}}</h3>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum officiis, aliquam mollitia temporibus
+          ducimus suscipit, eaque ipsum, culpa repellat atque sunt optio voluptatum. Recusandae cupiditate eum ut
+          obcaecati nisi illum!</p>
+      </div>
+      <!-- <div class="modal-footer">
+        <button class="btn btn-outline" type="button">Cancel</button>
+        <button class="btn btn-primary" type="button">Ok</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop" aria-hidden="true"></div>

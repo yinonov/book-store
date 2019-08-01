@@ -10,8 +10,25 @@ import * as fromWishListActions from '../actions/wish-list.actions';
 @Injectable()
 export class WishListUpdatesEffects {
 
-    @Effect() updateWishList = this.dataPersistence.optimisticUpdate(
+    @Effect() updateWishListUponAdd = this.dataPersistence.optimisticUpdate(
         fromWishListActions.wishListAddOne.type,
+        {
+            // provides an action and the current state of the store
+            run: (a: any, state: AppState) => {
+                return fromWishListActions.wishListUpdate();
+            },
+
+            undoAction: (a: any, e: any) => {
+                // TODO dispatch an undo action to undo the changes in the client state
+                return {
+                    type: 'UNDO_UPDATE_TODO', // ! not relevant, needs a change
+                    payload: a
+                };
+            }
+        });
+
+    @Effect() updateWishListUponRemove = this.dataPersistence.optimisticUpdate(
+        fromWishListActions.wishListRemoveOne.type,
         {
             // provides an action and the current state of the store
             run: (a: any, state: AppState) => {

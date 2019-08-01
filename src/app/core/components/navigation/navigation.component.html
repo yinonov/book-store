@@ -1,0 +1,6 @@
+<div class="header-nav">
+  <a routerLinkActive="active" class="nav-link nav-text" *ngFor="let item of menu" routerLink="{{item.path}}">
+    <!-- <clr-icon [attr.shape]="item.icon" class="is-solid"></clr-icon> -->
+    {{item.name}}
+  </a>
+</div>

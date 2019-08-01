@@ -7,7 +7,8 @@ import { WishListFacade } from '@app/shared/wish-list/wish-list.facade';
     <app-books-list
     [books]="booksFacade.list$ | async"
     [wishListDictionary]="wishListFacade.dictionary$ | async"
-    (add)="onAdd($event)"></app-books-list>
+    (add)="onAdd($event)"
+    (remove)="onRemove($event)"></app-books-list>
     <router-outlet></router-outlet>
   `
 })
@@ -20,6 +21,13 @@ export class BooksFeatureShellComponent {
 
   onAdd(book: Book) {
     this.wishListFacade.add({
+      ...book,
+      dateAdded: Date.now()
+    });
+  }
+
+  onRemove(book: Book) {
+    this.wishListFacade.remove({
       ...book,
       dateAdded: Date.now()
     });

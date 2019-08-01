@@ -6,13 +6,15 @@ import { BooksFeatureShellComponent } from './books-feature-shell.component';
 import { SharedBooksDataAccessModule } from '../shared/books/data-access/shared-books-data-access.module';
 import { BooksFeatureDetailComponent } from './containers/books-feature-detail/books-feature-detail.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [BooksFeatureShellComponent, BooksFeatureDetailComponent, BooksListComponent],
   imports: [
     CommonModule,
     BooksRoutingModule,
-    SharedBooksDataAccessModule
+    SharedBooksDataAccessModule,
+    ClarityModule
   ],
 })
 export class BooksModule { }

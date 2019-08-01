@@ -1,3 +1,21 @@
-<a routerLink="/books">books</a> |
-<a routerLink="/wishList">wishlist</a>
-<router-outlet></router-outlet>
+<div class="main-container">
+  <!-- <div class="alert alert-app-level">
+    ...
+  </div> -->
+  <app-header></app-header>
+
+  <!-- <nav class="subnav">
+    <clr-icon shape="cursor-hand-grab"></clr-icon>
+    <a routerLink="/books">books</a> |
+    <a routerLink="/wishList">wishlist</a>
+
+  </nav> -->
+  <div class="content-container">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- <nav class="sidenav">
+      ...
+    </nav> -->
+  </div>
+</div>
