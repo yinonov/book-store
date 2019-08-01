@@ -7,6 +7,8 @@ import { CoreModule } from './core/core.module';
 import { StateStoreModule } from './store/state-store.module';
 import { SharedUserDataAccessModule } from './shared/user/shared-user-data-access.module';
 import { SharedWishListDataAccessModule } from './shared/wish-list/data-access/shared-wish-list-data-access.module';
+import { ClarityModule } from '@clr/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { SharedWishListDataAccessModule } from './shared/wish-list/data-access/s
     SharedUserDataAccessModule,
     SharedWishListDataAccessModule,
     CoreModule,
+    ClarityModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
