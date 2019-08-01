@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ExampleComponent } from './example.component';
+import { WISH_LIST_FEATURE_KEY } from './shared/wish-list/data-access/reducers';
+import { BOOKS_FEATURE_KEY } from './shared/books/data-access/reducers';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/books',
+    redirectTo: `/${BOOKS_FEATURE_KEY}`,
     pathMatch: 'full'
   },
-  { path: 'example', component: ExampleComponent },
-  { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
+  { path: BOOKS_FEATURE_KEY, loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
+  { path: WISH_LIST_FEATURE_KEY, loadChildren: () => import('./wish-list/wish-list.module').then(m => m.WishListModule) },
   // {
   //   path: '**',
   //   component: ErrorPageComponent,

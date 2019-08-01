@@ -4,7 +4,10 @@ import { WishListFacade } from '@app/shared/wish-list/wish-list.facade';
 
 @Component({
   template: `
-    <app-books-list [books]="booksFacade.list$ | async" (add)="onAdd($event)"></app-books-list>
+    <app-books-list
+    [books]="booksFacade.list$ | async"
+    [wishListDictionary]="wishListFacade.dictionary$ | async"
+    (add)="onAdd($event)"></app-books-list>
     <router-outlet></router-outlet>
   `
 })
@@ -12,7 +15,7 @@ export class BooksFeatureShellComponent {
 
   constructor(
     public booksFacade: BooksFacade,
-    private wishListFacade: WishListFacade
+    public wishListFacade: WishListFacade
   ) { }
 
   onAdd(book: Book) {

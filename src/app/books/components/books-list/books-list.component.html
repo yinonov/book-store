@@ -3,5 +3,5 @@
   <a [routerLink]="book.id">
     {{book.title}}
   </a>
-  <button (click)="onAdd(book)">Add to wishlist</button>
+  <button *ngIf="!isWished(book)" (click)="onAdd(book)">Add to wishlist</button>
 </div>

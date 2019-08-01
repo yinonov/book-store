@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Dictionary } from '@ngrx/entity';
 
 @Component({
   selector: 'app-books-list',
@@ -7,9 +8,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BooksListComponent {
   @Input() books: Book[];
-  @Output() add = new EventEmitter();
+  @Input() wishListDictionary: Dictionary<Wish>;
+  @Output() add: EventEmitter<Book> = new EventEmitter();
 
-  constructor() { }
+  isWished({ id }: Book) {
+    return this.wishListDictionary[id];
+  }
 
   onAdd(book: Book) {
     this.add.emit(book);

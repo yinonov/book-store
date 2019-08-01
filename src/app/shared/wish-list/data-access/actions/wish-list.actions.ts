@@ -10,6 +10,11 @@ export const wishListAddOne = createAction(
   props<{ wish: Wish }>()
 );
 
+export const wishListRemoveOne = createAction(
+  '[Wish List] Remove One',
+  props<{ wish: Wish }>()
+);
+
 export const wishListUpdate = createAction(
   '[Wish List] Update',
 );

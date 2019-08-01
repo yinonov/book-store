@@ -1,0 +1,8 @@
+<div *ngFor="let wish of list">
+  {{wish.title}}
+  <div>
+    added at:
+    {{wish.dateAdded}}
+  </div>
+  <button (click)="onRemove(wish)">remove from list</button>
+</div>

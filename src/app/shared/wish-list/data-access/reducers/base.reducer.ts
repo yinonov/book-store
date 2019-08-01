@@ -18,6 +18,10 @@ const wishListReducer = createReducer(
     (state, action) => wishListAdapter.addOne(action.wish, state)
   ),
 
+  on(wishListActions.wishListRemoveOne,
+    (state, action) => wishListAdapter.removeOne(action.wish.id, state)
+  ),
+
 );
 
 export function baseReducer(state: WishListState | undefined, action: Action) {

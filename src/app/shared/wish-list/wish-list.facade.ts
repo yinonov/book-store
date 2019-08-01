@@ -11,6 +11,7 @@ export class WishListFacade {
     dictionary$ = this.store.pipe(select(wishListQuery.getWishListDictionary));
     list$ = this.store.pipe(select(wishListQuery.getWishListList));
     add = (wish: Wish) => this.store.dispatch(fromActions.wishListAddOne({ wish }));
+    remove = (wish: Wish) => this.store.dispatch(fromActions.wishListRemoveOne({ wish }));
 
     constructor(private store: Store<AppState>) { }
 }
