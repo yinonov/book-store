@@ -1,1 +1,1 @@
-export interface UserState extends User { }
+export type UserState = User;

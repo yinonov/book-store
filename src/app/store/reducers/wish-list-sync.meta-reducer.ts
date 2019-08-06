@@ -13,7 +13,7 @@ export function wishListSync(r: ActionReducer<State>): ActionReducer<State> {
             const wishList = window.localStorage.getItem(WISH_LIST_FEATURE_KEY);
             if (wishList) {
                 reducedState = { ...state, [WISH_LIST_FEATURE_KEY]: JSON.parse(wishList) };
-                console.log('im here', reducedState)
+                console.log('im here', reducedState);
             }
         } else if (action.type === wishListUpdate.type) {
             window.localStorage.setItem(WISH_LIST_FEATURE_KEY,

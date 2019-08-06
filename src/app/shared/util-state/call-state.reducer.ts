@@ -58,7 +58,7 @@ function extractCallState(triggers, action): CallStateUnion | null {
             return 'resting';
 
         case triggers.erroring.includes(action.type):
-            return (<{ error?: any }>action).error;
+            return (action as { error?: any }).error;
 
         default:
             return null;

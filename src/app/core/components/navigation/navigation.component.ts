@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-type MenuItem = {
+interface MenuItem {
   name: string;
   path: string;
   icon: string;
-};
+}
 
 @Component({
   selector: 'app-navigation',
