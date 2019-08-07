@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,14 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  title = 'book-store';
+export class AppComponent implements OnInit {
+
+  updateChannel = new BroadcastChannel('app-shell');
+
+  ngOnInit() {
+    this.updateChannel.addEventListener('message', e => {
+      alert('update');
+    });
+  }
+
 }

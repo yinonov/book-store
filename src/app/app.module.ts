@@ -9,6 +9,8 @@ import { SharedUserDataAccessModule } from './shared/user/shared-user-data-acces
 import { SharedWishListDataAccessModule } from './shared/wish-list/data-access/shared-wish-list-data-access.module';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedWishListDataAccessModule,
     CoreModule,
     ClarityModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
