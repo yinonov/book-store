@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WISH_LIST_FEATURE_KEY } from './shared/wish-list/data-access/reducers';
-import { BOOKS_FEATURE_KEY } from './shared/books/data-access/reducers';
+import { WISH_LIST_FEATURE_KEY } from './shared/wish-list/data-access/+state/reducers';
+import { BOOKS_FEATURE_KEY } from './shared/books/data-access/+state/reducers';
 
 
 const routes: Routes = [

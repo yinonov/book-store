@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import * as fromReducer from './reducers/books.reducer';
-import * as fromEffects from './effects';
+import * as fromReducer from './+state/reducers/books.reducer';
+import * as fromEffects from './+state/effects';
 import { DataPersistence } from '@nrwl/nx';
 
 @NgModule({

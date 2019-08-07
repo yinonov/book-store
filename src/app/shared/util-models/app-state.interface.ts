@@ -1,7 +1,7 @@
 import { BooksState } from './books-state.interface';
-import { BOOKS_FEATURE_KEY } from '../books/data-access/reducers/books.reducer';
+import { BOOKS_FEATURE_KEY } from '../books/data-access/+state/reducers/books.reducer';
 import { WishListState } from './wish-list-state.interface';
-import { WISH_LIST_FEATURE_KEY } from '../wish-list/data-access/reducers';
+import { WISH_LIST_FEATURE_KEY } from '../wish-list/data-access/+state/reducers';
 
 export interface AppState {
     [BOOKS_FEATURE_KEY]: BooksState;

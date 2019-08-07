@@ -12,7 +12,6 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
   declarations: [],
   imports: [
     StoreModule.forRoot(fromStore.reducers, {
-      metaReducers: fromStore.metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,

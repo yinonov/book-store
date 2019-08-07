@@ -3,6 +3,7 @@ import { EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import * as wishListActions from '../actions/wish-list.actions';
 import { WishListState } from 'src/app/shared/util-models';
 
+
 export const wishListAdapter: EntityAdapter<Wish> = createEntityAdapter<Wish>();
 
 export const wishListInitialState: WishListState = wishListAdapter.getInitialState();

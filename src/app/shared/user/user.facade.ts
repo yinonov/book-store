@@ -1,7 +1,7 @@
 import { AppState } from '@app/shared/util-models';
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { userQuery } from './data-access/selectors/user.selectors';
+import { userQuery } from './data-access/+state/selectors/user.selectors';
 
 @Injectable({
     providedIn: 'root'

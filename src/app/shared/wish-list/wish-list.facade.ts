@@ -1,8 +1,8 @@
 import { AppState } from '@app/shared/util-models';
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { wishListQuery } from './data-access/selectors/wish-list.selectors';
-import * as fromActions from './data-access/actions/wish-list.actions';
+import { wishListQuery } from './data-access/+state/selectors/wish-list.selectors';
+import * as fromActions from './data-access/+state/actions/wish-list.actions';
 
 @Injectable({
     providedIn: 'root'

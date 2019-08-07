@@ -7,3 +7,4 @@ export const WISH_LIST_FEATURE_KEY = 'wishList';
 export function wishListReducer(state: WishListState, action: Action) {
     return baseReducer(state, action);
 }
+
